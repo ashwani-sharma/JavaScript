@@ -1,0 +1,125 @@
+<!--Exercise for form validation-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Training Session</title>
+
+<style type="text/css">
+#container { width:400px; margin:0px auto; background:#e8f2d7; overflow:hidden; border-radius:0px 0px 10px 10px; -moz-border-radius:0px 0px 10px 10px; padding:0px 0px 10px; font-family:Arial, Helvetica, sans-serif; font-size:13px; }
+
+.confirmMessage { border:solid 1px #c00000; background:#FF0000; color:#FFFFFF; font-weight:bold; padding:5px 10px; margin-bottom:10px; }
+.heading { width:100%; background:#9ab368; text-align:center; padding:5px 0px; color:#FFFFFF; font-weight:bold; }
+ul { list-style:none; width:100%; float:left; margin:0px; padding:10px; }
+ul li { list-style:none; width:100%; float:left; margin:0px; padding:0px; }
+ul li dl { list-style:none; width:100%; float:left; margin:0px; padding:10px 0px; font-family:Arial, Helvetica, sans-serif; font-size:12px; }
+ul li dl dd { list-style:none; width:20%; float:left; margin:0px; padding:4px 0px 0px; }
+ul li dl dt { list-style:none; width:78%; float:right; margin:0px; padding:0px; }
+ul li dl dt span { clear:both; display:block; }
+</style>
+
+<script type="text/javascript" language="javascript">
+function check(){
+	var loginID = document.form1.login.value;
+	var testresults;
+	var emailID = document.form1.email.value;
+	var fullname = document.form1.name.value;
+	var male = document.form1.gender[0].checked;
+	var female = document.form1.gender[1].checked;
+	var validtimezone = document.form1.timezone.selectedIndex;
+	var homepageURL = document.form1.homepage.value;
+	var aboutmetext = document.form1.aboutme.value;
+	var confirmcheckbox = document.form1.confirmcheck.checked;
+	
+	if(loginID.length == 0){
+		alert("Please enter your login ID");
+		
+	}
+	
+	if (emailID.length == 0){
+	  	alert("Please enter your email ID");
+	}
+	
+	if(fullname.length == 0){
+		alert("Please enter your full name");
+	}
+	
+	if ( ( male == false ) && ( female == false ) ) {
+		alert("Please choose your Gender: Male or Female");
+	} 
+	
+	if(validtimezone == 0){
+		alert("Please select timezone");
+	}
+	
+	if(homepageURL.length == 0){
+		alert("Please enter your homepage");
+	}
+	
+	if(aboutmetext.length < 50){
+		alert("Please write something about yourself using atleast 50 characters");
+	}
+	
+	if((confirmcheckbox == false)){
+		alert("Please confirm notifications");
+	}
+	
+	else {
+		alert("Congratulations!! Your form has been submitted.");
+	}
+}
+</script>
+</head>
+
+<body>
+<form name="form1" method="get" action="http://google.com">
+<div id="container">
+	<div id="confirmation" class="confirmMessage" style="display:none;">Your all informations have been submitted.</div>
+	<div class="heading">Registration Form</div>
+	<ul>
+		<li>
+			<dl>
+				<dd>Login ID</dd>
+				<dt><input type="text" size="30" name="login" value="" /></dt>
+			</dl>
+			<dl>
+				<dd>Email</dd>
+				<dt><input type="text" size="30" name="email" value="" /></dt>
+			</dl>
+			<dl>
+				<dd>Name</dd>
+				<dt><input type="text" size="30" name="name" value="" /></dt>
+			</dl>
+			<dl>
+				<dd>Gender</dd>
+				<dt><input type="radio" name="gender" id="Male" value="Male" /> Male &nbsp;&nbsp; <input type="radio" name="gender" id="Female" value="Female" /> Female</dt>
+			</dl>
+			<dl>
+				<dd>Timezone</dd>
+				<dt><select style="width:208px;" name="timezone">
+					<option value="0">Select your Timezone</option>
+					<option value="1">GMT</option>
+					<option value="2">IST</option>
+					<option value="3">Local</option>
+				</select></dt>
+			</dl>
+			<dl>
+				<dd>Homepage</dd>
+				<dt><input type="text" size="30" name="homepage" value="" /></dt>
+			</dl>
+			<dl>
+				About Me<br />
+				<textarea name="aboutme" style="width:90%; height:120px;"></textarea></span>
+			</dl>
+			<dl><input type="checkbox" name="confirmcheck" /> Recieve notification of comments</dl>
+			<dl>
+				<input type="button" name="submitButton" value="Submit Information" onclick="check()" />
+			</dl>
+		</li>
+	</ul>
+</div>
+</form>
+
+</body>
+</html>

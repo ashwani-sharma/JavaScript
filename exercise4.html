@@ -1,0 +1,59 @@
+<!--Exercise for moving select box values from one to another-->
+
+<html>
+<head>
+<title>Training Session</title>
+	
+<script language="JavaScript">
+function changeItem(valueFrom, valueTo) {
+	var itemFrom = document.form1.elements[valueFrom];
+	var	itemTo   = document.form1.elements[valueTo];
+
+	var changeValue = 0;
+	for (var i = 0; i < itemFrom.options.length; i++) {
+		if (itemFrom.options[i].selected) {
+			itemTo.options[itemTo.options.length] = new Option(itemFrom.options[i].text, itemFrom.options[i].value);
+			changeValue++;
+		}
+		else if (changeValue){
+			itemFrom.options[i - changeValue] = new Option(itemFrom.options[i].text, itemFrom.options[i].value);
+		}
+	}
+	if (changeValue){
+		itemFrom.options.length = itemFrom.options.length - changeValue;
+	}
+	else{
+		alert("You haven't selected any options");
+	}
+}
+</script>
+</head>
+
+<body>
+<form name="form1">
+<div style="float:left; width:220px;">
+<select multiple name="source" size="8" style="width:200px;">
+	<option>India</option>
+	<option>Sri Lanka</option>
+	<option>Pakistan</option>
+	<option>New Zealand</option>
+	<option>Australia</option>
+	<option>South Africa</option>
+</select>
+</div>
+
+<div style="float:left; width:170px;">
+<input type="Button" value="Add Selected &gt;&gt;" onClick="changeItem('source', 'destination')"><br/><br />
+<input type="Button" value="&lt;&lt; Remove Selected" onClick="changeItem('destination', 'source')">
+</div>
+
+<div style="float:left; width:220px;">
+<select multiple name="destination" size="8" style="width:200px;">
+</select>
+</div>
+
+
+</form>
+
+</body>
+</html>

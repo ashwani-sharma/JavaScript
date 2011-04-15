@@ -1,0 +1,24 @@
+<!--Exercise for showing user first and last name using prompt-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Training Session</title>
+
+<script type="text/javascript" language="javascript">
+function user(){
+	var fname = prompt("Please enter your first name", "");
+	fl = fname.length;
+	var lname = prompt("Please enter your last name", "");
+	
+	alert("Hello " + fname+ " " + lname);
+	
+	document.write("your name is " + fname + " " + lname);
+}
+</script>
+</head>
+
+<body onload="user()">
+</body>
+</html>

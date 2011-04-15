@@ -1,0 +1,82 @@
+<!--Exercise for checking only 3 checkboxes from multiple checkboxes-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Training Session</title>
+<style type="text/css">
+table.brdr { border:solid 1px #cacaca; border-collapse:collapse; }
+table.brdr td { border-bottom:solid 1px #cacaca; border-left:solid 1px #cacaca; padding:5px; }
+a { font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#c00000; font-weight:bold; text-decoration:none; }
+a:hover { color:#FF0000; text-decoration:none; }
+</style>
+
+<script language="javascript">
+function uncheckAll(){
+	var childCheck = document.form1.slave;
+	for (var i=0; i<childCheck.length; i++) {
+		childCheck[i].checked = false;
+	}
+}
+
+function checkBoxes() {
+	var limit=0;
+	var childCheck = document.form1.slave;
+	
+	for (i=0; i<childCheck.length; i++) {
+		if (childCheck[i].checked)
+			limit = limit+1;
+	}
+	document.form1.master.checked = false;
+	return limit;
+}
+
+function checkLimit(check) {
+	if (checkBoxes() == 4) {
+		check.checked = false;
+		alert("You can't select more than 3 days.");
+	}
+}
+</script>
+</head>
+
+<body>
+<form name="form1" method="post">
+<table width="300" border="0" cellpadding="0" cellspacing="0" class="brdr">
+	<tr>
+		<td width="80"><input type="checkbox" name="master" onclick="uncheckAll(this)" /></td>
+		<td><strong>Uncheck All</strong></td>
+	</tr>
+	<tr>
+		<td width="50"><input type="checkbox" value="Monday" name="slave" id="0" onchange="checkLimit(this)" /></td>
+		<td><label for="0">Monday</label></td>
+	</tr>
+	<tr>
+		<td width="50"><input type="checkbox" value="Tuesday" name="slave" id="1" onchange="checkLimit(this)" /></td>
+		<td><label for="1">Tuesday</label></td>
+	</tr>
+	<tr>
+		<td width="50"><input type="checkbox" value="Wednesday" name="slave" id="2" onchange="checkLimit(this)" /></td>
+		<td><label for="2">Wednesday</label></td>
+	</tr>
+	<tr>
+		<td width="50"><input type="checkbox" value="Thursday" name="slave" id="3" onchange="checkLimit(this)" /></td>
+		<td><label for="3">Thursday</label></td>
+	</tr>
+	<tr>
+		<td width="50"><input type="checkbox" value="Friday" name="slave" id="4" onchange="checkLimit(this)" /></td>
+		<td><label for="4">Friday</label></td>
+	</tr>
+	<tr>
+		<td width="50"><input type="checkbox" value="Saturday" name="slave" id="5" onchange="checkLimit(this)" /></td>
+		<td><label for="5">Saturday</label></td>
+	</tr>
+	<tr>
+		<td width="50"><input type="checkbox" value="Sunday" name="slave" id="6" onchange="checkLimit(this)" /></td>
+		<td><label for="6">Sunday</label></td>
+	</tr>
+</table>
+</form>
+</body>
+</html>

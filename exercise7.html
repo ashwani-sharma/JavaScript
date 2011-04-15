@@ -1,0 +1,83 @@
+<!--Exercise for creating run time table rows with save, edit and delete functionality-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Training Session</title>
+<style type="text/css">
+table.brdr { border:solid 1px #cacaca; border-collapse:collapse; width:600px; }
+table.brdr th { text-align:left; color:#c00000; }
+table.brdr td { text-align:left; color:#666666; }
+table.brdr th, table.brdr td { border-collapse:collapse; padding:5px; font-family:Arial, Helvetica, sans-serif; font-size:12px; }
+</style>
+
+<script type="text/javascript">
+function addRow(){
+	var getTable = document.getElementById("myTable");
+	var rowCount = getTable.rows.length;
+	var getRow = getTable.insertRow(rowCount);
+	
+	var cell1 = getRow.insertCell(0);
+	var element1 = document.createElement("input");
+	element1.type = "text";
+	cell1.appendChild(element1);
+	
+	var cell2 = getRow.insertCell(1);
+	var element2 = document.createElement("input");
+	element2.type = "text";
+	cell2.appendChild(element2);
+	
+	var cell3 = getRow.insertCell(2);
+	cell3.innerHTML = '<input type="button" value="Edit" onclick="editData(this)" /> <input type="button" value="Delete" onclick="deleteRow(this)" />';
+	cell3.setAttribute("style", "display:none;")
+	
+	var cell4 = getRow.insertCell(3);
+	cell4.innerHTML = '<input type="button" value="Save" onclick="saveData(this)" /> <input type="button" value="Delete" onclick="deleteRow(this)" />';
+}
+
+function deleteRow(x){
+	//var rowCount = document.getElementById("myTable").rows.length;
+	//document.getElementById("myTable").deleteRow(rowCount-1);
+	x.parentNode.parentNode.parentNode.removeChild(x.parentNode.parentNode);
+	//document.write(x +" "+ x.parentNode+" "+x.parentNode.parentNode);
+}
+
+function saveData(x){
+	var getCell = x.parentNode.parentNode.getElementsByTagName("td");
+	getCell[0].innerHTML = getCell[0].firstChild.value;
+	getCell[1].innerHTML = getCell[1].firstChild.value;
+	getCell[2].setAttribute("style", "display:block;");
+	getCell[3].setAttribute("style", "display:none;");
+}
+
+function editData(x){
+	var getCell = x.parentNode.parentNode.getElementsByTagName("td");
+	getCell[0].innerHTML = '<input type="text" value="'+getCell[0].innerHTML+'" />';
+	getCell[1].innerHTML = '<input type="text" value="'+getCell[1].innerHTML+'" />';
+	getCell[2].setAttribute("style", "display:none;");
+	getCell[3].setAttribute("style", "display:block;");
+}
+</script>
+</head>
+
+<body>
+<form name="form1" method="">
+<input type="button" name="addNewRow" value="Add New Row" onclick="addRow()" />
+<table border="1" cellpadding="0" cellspacing="0" class="brdr" id="myTable">
+	<tr>
+		<th>Name</th>
+		<th>Email</th>
+		<th>Action</th>
+		<th style="display:none">&nbsp;</th>
+	</tr>
+	<tr>
+		<td width="25%">Ashwani Sharma</td>
+		<td width="25%">ashwani.sharma@vinsol.com</td>
+		<td width="25%"><input type="button" value="Edit" onclick="editData(this)" /> <input type="button" value="Delete" onclick="deleteRow(this)" /></td>
+		<td width="25%" style="display:none;"><input type="button" value="Save" onclick="saveData(this)" /> <input type="button" value="Delete" onclick="deleteRow(this)" /></td>
+	</tr>
+</table>
+</form>
+</body>
+</html>

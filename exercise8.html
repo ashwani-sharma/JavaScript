@@ -1,0 +1,103 @@
+<!--Exercise for show/hide sections using checking/unchecking checkbox-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+table.brdr { border:solid 1px #cacaca; border-collapse:collapse; }
+table.brdr td { border-bottom:solid 1px #cacaca; border-left:solid 1px #cacaca; padding:5px; }
+a { font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#c00000; font-weight:bold; text-decoration:none; }
+a:hover { color:#FF0000; text-decoration:none; }
+
+.container { min-width:200px; height:100px; float:left; padding:5px 10px; border:solid 1px #cacaca; overflow-x:hidden; overflow-y:scroll; }
+.container ul { list-style:none; margin:0px; padding:0px; }
+.container li { list-style:none; margin:0px; padding:3px 0px 0px; }
+.container li ul { list-style:none; margin:0px; padding:0px 0px 0px; }
+.container li li { list-style:none; margin:0px 0px 0px 25px; padding:0px 0px 0px; color:#c00000; }
+</style>
+<script language="javascript">
+function effect1(){
+	var check1 = document.form1.color;
+	if(check1.checked == true){
+		document.getElementById("colors").style.display = "block";
+	}
+	else {
+		document.getElementById("colors").style.display = "none";
+	}
+}
+
+function effect2(){
+	var check1 = document.form1.drink;
+	if(check1.checked == true){
+		document.getElementById("drinks").style.display = "block";
+	}
+	else {
+		document.getElementById("drinks").style.display = "none";
+	}
+}
+
+function effect3(){
+	var check1 = document.form1.movie;
+	if(check1.checked == true){
+		document.getElementById("movies").style.display = "block";
+	}
+	else {
+		document.getElementById("movies").style.display = "none";
+	}
+}
+
+function effect4(){
+	var check1 = document.form1.bike;
+	if(check1.checked == true){
+		document.getElementById("bikes").style.display = "block";
+	}
+	else {
+		document.getElementById("bikes").style.display = "none";
+	}
+}
+</script>
+</head>
+
+<body>
+<form name="form1">
+<div class="container">
+	<ul>
+		<li><input type="checkbox" name="color" onchange="effect1()" /> Colors
+			<ul id="colors" style="display:none;">
+				<li><input type="checkbox" /> Red</li>
+				<li><input type="checkbox" /> Yellow</li>
+				<li><input type="checkbox" /> Green</li>
+				<li><input type="checkbox" /> Blue</li>
+			</ul>
+		</li>
+		<li><input type="checkbox" name="drink" onchange="effect2()" /> Drinks
+			<ul id="drinks" style="display:none;">
+				<li><input type="checkbox" /> Coke</li>
+				<li><input type="checkbox" /> Thums Up</li>
+				<li><input type="checkbox" /> Fanta</li>
+				<li><input type="checkbox" /> Dew</li>
+			</ul>
+		</li>
+		<li><input type="checkbox" name="movie" onchange="effect3()" /> Movies
+			<ul id="movies" style="display:none;">
+				<li><input type="checkbox" /> Dasvidaniya</li>
+				<li><input type="checkbox" /> Dev D.</li>
+				<li><input type="checkbox" /> Guzaarish</li>
+				<li><input type="checkbox" /> Jhankaar Beats</li>
+			</ul>
+		</li>
+		<li><input type="checkbox" name="bike" onchange="effect4()" /> Bikes
+			<ul id="bikes" style="display:none;">
+				<li><input type="checkbox" /> CBZ</li>
+				<li><input type="checkbox" /> Apache</li>
+				<li><input type="checkbox" /> Thunderbird</li>
+				<li><input type="checkbox" /> FZ</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+</form>
+</body>
+</html>

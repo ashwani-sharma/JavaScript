@@ -1,0 +1,29 @@
+<!--Exercise for opening a prompt URL in new popup window-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Training Session</title>
+
+<script type="text/javascript">
+function newWindow(){
+	var newURL = prompt("Enter a URL","");
+	var ul = newURL.length;
+	var checkURL = newURL.split("://");
+	//alert(checkURL);
+	if(ul == 0){
+		alert("you didn't enter any URL");
+	}
+	else if(checkURL[0] == "http"){
+		window.open(newURL, 'My Window', 'width=400', 'height=450','toolbar=no','status=no','menubar=no','scrollbars=no');
+	}
+	else {
+		window.open("http://" + newURL, 'My Window', 'width=400', 'height=450','toolbar=no','status=no','menubar=no','scrollbars=no');
+	}
+}
+</script>
+</head>
+<body onload="newWindow()">
+</body>
+</html>
