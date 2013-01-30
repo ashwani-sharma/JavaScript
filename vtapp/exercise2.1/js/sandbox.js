@@ -1,4 +1,7 @@
 $(function(){
+	
+	// Exercise 2.1 Selecting
+	
 	// code for question #1 of exercise 2.1
 	$("div.module")//.addClass("aks"); // to add class with all div elements having class "module"
 	//var abc = $(".module").length;
@@ -32,4 +35,39 @@ $(function(){
 	
 	// code for question #6 of exercise 2.1
 	$("table#fruits tr:odd")//.css("background", "#ff0000");
+	
+	
+	
+	
+	// Exercise 2.2 Traversing
+	
+	// code for question #1 of exercise 2.2
+	$("img").each(function() {
+		console.log($(this).attr("alt"));
+	});
+	//alert($('img').length);
+	
+	
+	// code for question #2 of exercise 2.2
+	$("input.input_text").closest("form").addClass("aks");
+	//$("input.input_text").parent("form").addClass("aks");//another method
+	
+	
+	
+	// code for question #3 of exercise 2.2
+	$("ul#myList").children("li").eq("4").removeClass("current").next().addClass("current");
+	
+	
+	
+	// code for question #4 of exercise 2.2
+	$("#specials").find("select").parent().next().find("input[type='submit']");
+	
+	
+	
+	// code for question #5 of exercise 2.2
+	$("#slideshow").children(":first-child").addClass("current").nextAll().addClass("disabled");
+	
+	
+	
+	$("ul#myList").after("<li>ashwani sharma</li>")
 });
