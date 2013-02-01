@@ -55,7 +55,7 @@ $(function(){
 	
 	
 	// code for question #3 of exercise 2.2
-	$("ul#myList").children("li").eq("4").removeClass("current").next().addClass("current");
+	$("ul#myList li.current").removeClass("current").next().addClass("current");
 	
 	
 	
@@ -66,8 +66,4 @@ $(function(){
 	
 	// code for question #5 of exercise 2.2
 	$("#slideshow").children(":first-child").addClass("current").nextAll().addClass("disabled");
-	
-	
-	
-	$("ul#myList").after("<li>ashwani sharma</li>")
 });
