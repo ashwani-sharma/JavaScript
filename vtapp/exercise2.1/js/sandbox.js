@@ -66,4 +66,43 @@ $(function(){
 	
 	// code for question #5 of exercise 2.2
 	$("#slideshow").children(":first-child").addClass("current").nextAll().addClass("disabled");
+	
+	
+	
+	
+	// Exercise 2.3 Manipulating
+	
+	// code for question #1 of exercise 2.3
+	var liCount = $("ul#myList li").length;
+	//alert(liCount);
+	for(i=0; i<5; i++){
+		//liCount ++;
+		$("<li></li>").text("List Item " + parseInt(liCount + i + 1)).appendTo("ul#myList");
+	}
+	
+	
+	
+	// code for question #2 of exercise 2.3
+	$("ul#myList li:odd").remove();
+	
+	
+	
+	// code for question #3 of exercise 2.3
+	$("<h2>Another Heading</h2> <p>Another Paragraph</p>").insertAfter("div.module:last h2");
+	// $("div.module:last").append("<h2>Another Heading</h2> <p>Another Paragraph</p>"); // another solution
+	
+	
+	
+	// code for question #4 of exercise 2.3
+	var dayVal = $("div.module:last select option[value = 'friday']");
+	var daySelect = $("div.module:last select");
+	$("div.module:last select").append("<option value='wednesday'>Wednesday</option>");
+	$(dayVal).appendTo("div.module:last select");
+	
+	
+	
+	// code for question #5 of exercise 2.3
+	var firstImg = $("img:first");
+	$("<div class='module'></div>").insertAfter("div.module:last");
+	$(firstImg).clone().appendTo("div.module:last");
 });
