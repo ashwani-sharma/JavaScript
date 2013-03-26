@@ -97,7 +97,7 @@ $(function(){
 	var dayVal = $("div.module:last select option[value = 'friday']");
 	var daySelect = $("div.module:last select");
 	$("div.module:last select").append("<option value='wednesday'>Wednesday</option>");
-	$(dayVal).appendTo("div.module:last select");
+	$(dayVal).appendTo(daySelect);
 	
 	
 	
@@ -105,4 +105,42 @@ $(function(){
 	var firstImg = $("img:first");
 	$("<div class='module'></div>").insertAfter("div.module:last");
 	$(firstImg).clone().appendTo("div.module:last");
+	
+	
+	
+	
+	
+	
+	//practice
+	var aks = $("ul#myList li");
+	$(aks).css("cursor", "pointer");
+	$(aks).on('click', function(){
+		$(this).each(function(){
+			if(this.style.fontWeight != "bold"){
+				this.style.fontWeight = "bold";
+				$(this).siblings().css("fontWeight", "normal");
+			}
+			else(this.style.fontWeight = "normal");
+		});
+	});
+	
+	
+	
+	var subButton = $("input[type = 'text']");
+	
+	subButton.bind('focus', function(){
+		var txtValue = subButton.val();
+		txtValue = jQuery.trim(txtValue);
+		if(txtValue == "Enter your keyword"){
+			subButton.val("");
+		}
+	});
+	subButton.bind('blur', function(){
+		var txtValue = subButton.val();
+		txtValue = jQuery.trim(txtValue);
+		if(txtValue == ""){
+			subButton.val("Enter your keyword");
+		}
+	});
+	
 });
