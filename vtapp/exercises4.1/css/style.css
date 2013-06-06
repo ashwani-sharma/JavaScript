@@ -327,3 +327,11 @@ margin: 15px 0;
 	z-index: 100;
 	
 }
+
+div#tabs { display:block; width:100%; overflow:hidden; margin-bottom:100px; }
+div#tabs ul { float:left; margin:0px; padding:0px; list-style:none; }
+div#tabs ul li { float:left; margin:0px; padding:0px; list-style:none; margin-right:2px; }
+div#tabs ul li a { float:left; padding:10px 20px; background:#CCC; border:solid 1px #999; font-size:13px; color:#000; text-decoration:none; }
+div#tabs ul li.current a, div#tabs ul li a:hover { background:#fff; border:solid 1px #999; font-size:13px; color:#06C; text-decoration:none; }
+div#tabs div#tabs-container { width:100%; overflow:hidden; }
+div#tabs div#tabs-container div.content { width:100%; overflow:hidden; }
