@@ -5,9 +5,9 @@ $(document).ready(function(){
   $("div.module").each(function(){
     var h2Text = $(this).children("h2").text();
     $("<li></li>").text(h2Text).attr("rel","#"+h2Text).appendTo("ul.tabs");
-	});
+  });
 	
-	$("ul.tabs").css({
+  $("ul.tabs").css({
     width : "100%",
     float : "left",
     listStyle : "none",
