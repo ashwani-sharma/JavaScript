@@ -335,3 +335,8 @@ div#tabs ul li a { float:left; padding:10px 20px; background:#CCC; border:solid 
 div#tabs ul li.current a, div#tabs ul li a:hover { background:#fff; border:solid 1px #999; font-size:13px; color:#06C; text-decoration:none; }
 div#tabs div#tabs-container { width:100%; overflow:hidden; }
 div#tabs div#tabs-container div.content { width:100%; overflow:hidden; }
+
+ul.tabs { width:100%; float:left; margin:20px 20px 20px 0px; }
+ul.tabs li { float:left; margin: 0 0 0 10px; font-family:arial; color:blue; list-style:none; cursor:pointer; }
+ul.tabs li:first-child { margin-left:0px; } 
+ul.tabs li.current { color:red; }
